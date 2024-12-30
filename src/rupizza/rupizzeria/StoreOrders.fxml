@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rupizza.rupizzeria.StoreOrdersController">
+   <top>
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Store Orders" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="25.0" />
+         </font>
+      </Text>
+   </top>
+   <center>
+          <AnchorPane prefHeight="571.0" prefWidth="595.0" style="-fx-background-color: teal;" BorderPane.alignment="CENTER">
+              <children>
+            <VBox layoutX="50.0" layoutY="33.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                              <Label prefHeight="48.0" prefWidth="147.0" text="Customer Phone Number:" textFill="WHITE" />
+                              <ComboBox fx:id="storeOrderPhone" onAction="#showOrder" prefWidth="150.0" />
+                     </children>
+                  </HBox>
+                        <ListView fx:id="storeOrderListView" prefHeight="324.0" prefWidth="558.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="465.0" spacing="100.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                                    <Label prefHeight="58.0" prefWidth="132.0" text="Order Total: $" textFill="WHITE" />
+                              <TextField fx:id="storeOrderTotal" />
+                           </children>
+                        </HBox>
+                              <VBox alignment="CENTER" prefHeight="100.0" prefWidth="156.0" spacing="10.0">
+                                  <children>
+                                      <Button mnemonicParsing="false" onAction="#cancelOrder" prefHeight="26.0" prefWidth="150.0" text="Cancel Order" />
+                                      <Button mnemonicParsing="false" onAction="#exportOrders" prefHeight="26.0" prefWidth="150.0" text="Export Store Orders" />
+                                  </children>
+                              </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+              </children>
+          </AnchorPane>
+   </center>
+</BorderPane>

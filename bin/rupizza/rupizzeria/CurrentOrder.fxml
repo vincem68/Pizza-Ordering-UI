@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rupizza.rupizzeria.CurrentOrderController">
+   <center>
+          <AnchorPane prefHeight="650.0" prefWidth="567.0" style="-fx-background-color: teal;" BorderPane.alignment="CENTER">
+              <children>
+            <VBox layoutX="5.0" layoutY="114.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+               <children>
+                  <VBox>
+                     <children>
+                              <Label prefHeight="17.0" prefWidth="175.0" text="Current Pizzas in the Order:" textFill="WHITE" />
+                        <ListView fx:id="currentOrderListView" prefHeight="300.0" prefWidth="557.0" />
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="100.0" prefWidth="567.0" spacing="5.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="274.0">
+                           <children>
+                                    <Label prefHeight="39.0" prefWidth="102.0" text="Subtotal: $" textFill="WHITE" />
+                              <TextField fx:id="currentOrderSubtotal" editable="false" prefHeight="26.0" prefWidth="252.0" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="285.0">
+                           <children>
+                                    <Label prefHeight="39.0" prefWidth="105.0" text="Sales Tax: $" textFill="WHITE" />
+                              <TextField fx:id="currentOrderTax" editable="false" prefHeight="26.0" prefWidth="251.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <HBox spacing="150.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                                    <Label prefHeight="32.0" prefWidth="80.0" text="Total: $" textFill="WHITE" />
+                              <TextField fx:id="currentOrderTotal" editable="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                           <children>
+                                    <Button mnemonicParsing="false" onAction="#removePizza" prefHeight="26.0" prefWidth="98.0" text="Remove Pizza" />
+                                    <Button mnemonicParsing="false" onAction="#placeOrder" prefHeight="25.0" prefWidth="85.0" text="Place Order" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER" layoutX="144.0" layoutY="14.0" prefHeight="100.0" prefWidth="298.0" AnchorPane.topAnchor="15.0">
+               <children>
+                        <Label prefHeight="31.0" prefWidth="158.0" text="Customer Phone Number:" textFill="WHITE" />
+                  <TextField fx:id="currentOrderPhone" editable="false" />
+               </children>
+            </HBox>
+              </children>
+          </AnchorPane>
+   </center>
+   <top>
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Pizza Order" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="25.0" />
+         </font>
+      </Text>
+   </top>
+</BorderPane>

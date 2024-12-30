@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rupizza.rupizzeria.PizzasController">
+   <center>
+      <AnchorPane prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: teal;">
+         <children>
+            <VBox layoutX="54.5" layoutY="200.0">
+               <children>
+                  <HBox prefHeight="25.0" prefWidth="490.0" spacing="180.0">
+                     <children>
+                        <Label text="Additional Toppings:" textFill="WHITE" />
+                        <Label text="Selected Toppings:" textFill="WHITE" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="269.0" prefWidth="486.0">
+                     <children>
+                        <ListView fx:id="additionalTop" prefHeight="200.0" prefWidth="200.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#addTopping" text="Add&gt;&gt;" />
+                                 </children>
+                              </StackPane>
+                              <StackPane prefHeight="150.0" prefWidth="200.0">
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#removeTopping" text="&lt;&lt;Remove" />
+                                 </children>
+                              </StackPane>
+                           </children>
+                        </VBox>
+                        <ListView fx:id="selectedTop" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <ImageView fx:id="deluxeImage" fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" visible="false" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@DeluxePizza.jpeg" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" layoutX="55.0" layoutY="520.0" prefHeight="60.0" prefWidth="490.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="55.0" AnchorPane.rightAnchor="55.0">
+               <children>
+                  <Label prefHeight="17.0" prefWidth="52.0" text="Price: $" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Label>
+                  <TextField fx:id="runningPrice">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#addToOrder" prefHeight="26.0" prefWidth="100.0" text="Add To Order">
+                     <HBox.margin>
+                        <Insets left="190.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="337.0" layoutY="20.0" prefHeight="100.0" prefWidth="208.0" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="55.0">
+               <children>
+                  <GridPane>
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="Pizza Size:" textFill="WHITE" GridPane.rowIndex="1" />
+                        <ComboBox fx:id="sizeDropDown" onAction="#displaySizes" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Pizza Type:" textFill="WHITE" />
+                        <TextField fx:id="pizzaType" editable="false" GridPane.columnIndex="1" />
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+            <ImageView fx:id="pepperoniImage" fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@PepperoniPizza.jpeg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hawaiianImage" fitHeight="150.0" fitWidth="200.0" layoutX="55.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@HawaiianPizza.jpeg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <Text fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Pizza Customization" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS" size="25.0" />
+         </font>
+      </Text>
+   </top>
+</BorderPane>
+
